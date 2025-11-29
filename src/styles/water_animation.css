@@ -147,6 +147,19 @@ body {
 .home-section {
   height: 100vh;
   overflow: hidden;
+  position: relative;
+}
+
+.home-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+  background: linear-gradient(to bottom, transparent 0%, rgba(245, 247, 250, 0.3) 50%, rgba(245, 247, 250, 0.8) 100%);
+  pointer-events: none;
+  z-index: 2;
 }
 
 .section-content {
