@@ -24,35 +24,6 @@ body {
   overflow: hidden;
 }
 
-.background .water {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(180deg, rgba(59, 130, 246, 0.6) 0%, rgba(37, 99, 235, 0.8) 50%, rgba(29, 78, 216, 0.9) 100%);
-  background-size: cover;
-  filter: url("#turbulence");
-  animation: water-shift 20s ease-in-out infinite;
-}
-
-@keyframes water-shift {
-  0%, 100% {
-    transform: translateY(0) scale(1);
-  }
-  50% {
-    transform: translateY(-10px) scale(1.02);
-  }
-}
-
-.water-filter {
-  position: absolute;
-  width: 0;
-  height: 0;
-  visibility: hidden;
-}
-
 .mermaid-container {
   position: absolute;
   top: 50%;
@@ -71,16 +42,6 @@ body {
   height: auto;
   object-fit: contain;
   filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
-  animation: float 6s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
 }
 
 @media (max-width: 768px) {
