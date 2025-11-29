@@ -10,6 +10,8 @@ html {
 
 body {
   overflow-x: hidden;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
 }
 
 .app {
@@ -145,10 +147,12 @@ body {
 }
 
 .section-title {
+  font-family: 'Lora', serif;
   font-size: 3rem;
   margin-bottom: 40px;
   color: #2c3e50;
   text-align: center;
+  font-weight: 600;
 }
 
 /* About Section */
@@ -224,9 +228,11 @@ body {
 }
 
 .service-item h3 {
+  font-family: 'Lora', serif;
   font-size: 1.5rem;
   margin-bottom: 15px;
   color: white;
+  font-weight: 600;
 }
 
 .service-item p {
