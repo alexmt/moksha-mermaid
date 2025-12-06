@@ -1,38 +1,58 @@
+import React from 'react';
+import services1 from '../assets/services1.jpg';
+import services2 from '../assets/services2.jpg';
+import services3 from '../assets/services3.jpg';
+
+type ServiceCard = {
+  title: string;
+  subtitle: string;
+  image: string;
+};
+
+const cards: ServiceCard[] = [
+  {
+    title: 'Learn to tame Anxiety',
+    subtitle: 'Practical tools to calm mind and body',
+    image: services1,
+  },
+  {
+    title: 'Rise above Depression',
+    subtitle: 'Restore energy, hope, and direction',
+    image: services2,
+  },
+  {
+    title: 'Build a stronger Relationship',
+    subtitle: 'Communicate, reconnect, and grow together',
+    image: services3,
+  },
+];
+
 function ServicesSection(): React.JSX.Element {
   return (
     <section id="services" className="section services-section">
       <div className="section-content">
         <h2 className="section-title">Services</h2>
-        <div className="services-content">
-          <p>
-            I offer a range of therapeutic services designed to meet your unique needs. 
-            Each session is personalized to support your journey towards wellness and 
-            personal growth.
-          </p>
-          <div className="services-list">
-            <div className="service-item">
-              <h3>Individual Therapy</h3>
-              <p>
-                One-on-one sessions focused on your personal challenges, goals, and 
-                emotional well-being. We'll work together to develop strategies that 
-                work for you.
-              </p>
+        <div className="service-stack">
+          {cards.map((c, i) => (
+            <div
+              key={c.title}
+              className="service-card"
+              style={{
+                backgroundImage: `url(${c.image})`,
+              }}
+              role="article"
+              aria-label={c.title}
+              tabIndex={0}
+              data-index={i}
+            >
+              <div className="service-card-overlay">
+                <div className="service-card-text">
+                  <h3 className="service-card-title">{c.title}</h3>
+                  <p className="service-card-subtitle">{c.subtitle}</p>
+                </div>
+              </div>
             </div>
-            <div className="service-item">
-              <h3>Couples Counseling</h3>
-              <p>
-                Strengthen your relationship through improved communication, conflict 
-                resolution, and deeper understanding of each other's needs.
-              </p>
-            </div>
-            <div className="service-item">
-              <h3>Group Therapy</h3>
-              <p>
-                Connect with others facing similar challenges in a supportive group 
-                setting. Share experiences and learn from one another.
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

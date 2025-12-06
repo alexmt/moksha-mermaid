@@ -1,7 +1,7 @@
 function BookSection(): React.JSX.Element {
   return (
     <section id="book" className="section book-section">
-      <div className="section-content">
+      <div className="section-content" style={{ textAlign: 'center' }}>
         <h2 className="section-title">Book a Session</h2>
         <div className="book-content">
           <form className="booking-form">
