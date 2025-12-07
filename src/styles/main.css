@@ -380,7 +380,25 @@ body {
   inset: 0;
   background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.35) 40%, rgba(0,0,0,0.6) 100%);
   display: flex;
+  align-items: flex-start;
+}
+
+.service-card-description {
   align-items: flex-end;
+  color: #fff;
+  padding: 20px 24px;
+  margin: 24px;
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(3px);
+  border-radius: 12px;
+}
+
+.service-card-description p {
+  margin-bottom: 1.5em;
+}
+
+.service-card-description ul {
+  margin-bottom: 2em;
 }
 
 .service-card-text {

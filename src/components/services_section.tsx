@@ -3,11 +3,13 @@ import services1 from '../assets/services1.jpg';
 import services2 from '../assets/services2.jpg';
 import services3 from '../assets/services3.jpg';
 import { servicesContent } from '../content';
+import Markdown from 'react-markdown'
 
 type ServiceCard = {
   title: string;
   subtitle: string;
   image: string;
+  description: string;
 };
 
 const images = [services1, services2, services3];
@@ -15,6 +17,7 @@ const cards: ServiceCard[] = servicesContent.map((service, i) => ({
   title: service.name,
   subtitle: service.subtitle,
   image: images[i % images.length],
+  description: service.description,
 }));
 
 function ServicesSection(): React.JSX.Element {
@@ -39,6 +42,9 @@ function ServicesSection(): React.JSX.Element {
                 <div className="service-card-text">
                   <h3 className="service-card-title">{c.title}</h3>
                   <p className="service-card-subtitle">{c.subtitle}</p>
+                </div>
+                <div className="service-card-description">
+                  <Markdown>{c.description}</Markdown>
                 </div>
               </div>
             </div>

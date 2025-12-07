@@ -11,4 +11,5 @@ export const aboutContent = yaml.parse(aboutContentYaml) as {
 export const servicesContent = yaml.parse(servicesContentYaml) as {
   name: string;
   subtitle: string;
+  description: string;
 }[];
