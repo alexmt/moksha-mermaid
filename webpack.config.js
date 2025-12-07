@@ -20,6 +20,10 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
+        test: /\.yaml$/i,
+        use: ['raw-loader'],
+      },
+      {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
       },

@@ -2,6 +2,7 @@ import React from 'react';
 import services1 from '../assets/services1.jpg';
 import services2 from '../assets/services2.jpg';
 import services3 from '../assets/services3.jpg';
+import { servicesContent } from '../content';
 
 type ServiceCard = {
   title: string;
@@ -9,23 +10,12 @@ type ServiceCard = {
   image: string;
 };
 
-const cards: ServiceCard[] = [
-  {
-    title: 'Learn to tame Anxiety',
-    subtitle: 'Practical tools to calm mind and body',
-    image: services1,
-  },
-  {
-    title: 'Rise above Depression',
-    subtitle: 'Restore energy, hope, and direction',
-    image: services2,
-  },
-  {
-    title: 'Build a stronger Relationship',
-    subtitle: 'Communicate, reconnect, and grow together',
-    image: services3,
-  },
-];
+const images = [services1, services2, services3];
+const cards: ServiceCard[] = servicesContent.map((service, i) => ({
+  title: service.name,
+  subtitle: service.subtitle,
+  image: images[i % images.length],
+}));
 
 function ServicesSection(): React.JSX.Element {
   return (
