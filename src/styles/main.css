@@ -183,7 +183,7 @@ body {
 
 /* Home header with mermaid logo */
 .home-header {
-  position: absolute;
+  position: fixed;
   top: 24px;
   left: 24px;
   display: flex;
