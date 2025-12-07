@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import mermaidImage from '../assets/mermaid.png';
+import mermaidImage from '../assets/mermaid.webp';
 
 function Navigation(): React.JSX.Element {
   const [activeSection, setActiveSection] = useState("home");
