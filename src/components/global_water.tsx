@@ -1,4 +1,5 @@
 import backgroundImage from '../assets/background.png';
+import butterflyGif from '../assets/butterfly.gif';
 
 function GlobalWater(): React.JSX.Element {
   return (
@@ -9,8 +10,10 @@ function GlobalWater(): React.JSX.Element {
         position: 'fixed',
         top: 0,
         left: 0,
-        width: '100vw',
-        height: '100vh',
+        right: 0,
+        bottom: 0,
+        width: '100%',
+        height: '100%',
         zIndex: 0,
         pointerEvents: 'none',
       }}
@@ -30,6 +33,10 @@ function GlobalWater(): React.JSX.Element {
           ></animate>
         </filter>
       </svg>
+      <div className="butterfly">
+        <div style={{ backgroundImage: `url(${butterflyGif})` }} className="butterfly-image" />
+      </div>
+
     </div>
   );
 }
