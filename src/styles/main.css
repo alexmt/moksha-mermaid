@@ -350,8 +350,6 @@ body {
 }
 
 .service-card {
-  position: relative;
-  height: 28vh;
   margin-bottom: 5em;
   min-height: 520px;
   border-radius: 24px;
@@ -376,11 +374,10 @@ body {
 }
 
 .service-card-overlay {
-  position: absolute;
-  inset: 0;
   background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.35) 40%, rgba(0,0,0,0.6) 100%);
   display: flex;
   align-items: flex-start;
+  height: 100%;
 }
 
 .service-card-description {
@@ -405,9 +402,6 @@ body {
   color: #fff;
   padding: 20px 24px;
   margin: 24px;
-  background: rgba(0,0,0,0.35);
-  backdrop-filter: blur(3px);
-  border-radius: 12px;
   max-width: 900px;
 }
 
@@ -561,8 +555,10 @@ body {
     padding-left: 8px;
     padding-right: 8px;
   }
+  .service-card-overlay {
+    display: block;
+  }
   .service-card {
-    height: 56vh;
     min-height: 380px;
     border-radius: 18px;
   }
