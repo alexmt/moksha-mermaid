@@ -1,5 +1,6 @@
 import vanessaImage from '../assets/vanessa_aders.png';
 import { aboutContent } from '../content';
+import './about_section.css';
 
 function AboutSection(): React.JSX.Element {
   return (

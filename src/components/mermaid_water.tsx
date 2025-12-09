@@ -1,5 +1,6 @@
 import mermaidImage from '../assets/mermaid.png';
 import backgroundImage from '../assets/background.png';
+import './mermaid_water.css';
 
 function MermaidWater(): React.JSX.Element {
   return (

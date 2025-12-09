@@ -1,5 +1,6 @@
 import backgroundImage from '../assets/background.png';
 import butterflyGif from '../assets/butterfly.gif';
+import './global_water.css';
 
 function GlobalWater(): React.JSX.Element {
   return (

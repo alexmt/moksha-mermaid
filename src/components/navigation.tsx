@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import './navigation.css';
 
 import mermaidImage from '../assets/mermaid.webp';
 

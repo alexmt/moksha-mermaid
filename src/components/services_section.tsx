@@ -4,6 +4,7 @@ import services2 from '../assets/services2.jpg';
 import services3 from '../assets/services3.jpg';
 import { servicesContent } from '../content';
 import Markdown from 'react-markdown'
+import './services_section.css';
 
 type ServiceCard = {
   title: string;

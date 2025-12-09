@@ -1,3 +1,5 @@
+import './home_section.css';
+
 function HomeSection(): React.JSX.Element {
   return (
     <section id="home" className="section home-section">

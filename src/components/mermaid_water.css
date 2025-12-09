@@ -1,0 +1,35 @@
+/* Mermaid + Water visuals */
+.mermaid-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mermaid-image {
+  max-width: 60vw;
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+  transition: filter 0.4s ease;
+  cursor: pointer;
+}
+
+.mermaid-image:hover {
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3)) 
+          drop-shadow(0 0 30px rgba(255, 255, 255, 0.4))
+          drop-shadow(0 0 50px rgba(173, 216, 230, 0.3));
+}
+
+@media (max-width: 768px) {
+  .mermaid-image {
+    max-width: 80vw;
+    max-height: 70vh;
+  }
+}
