@@ -104,6 +104,44 @@
   transition: right 0.8s cubic-bezier(0.4, 0, 0.2, 1), bottom 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.butterfly::after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+  width: 5px;
+  height: 5px;
+  left: 60%; /* Starting position */
+  top: 2px;
+  z-index: 3;
+  border-radius: 50%;
+  background: radial-gradient(circle at 60% 40%, #fffbe8 55%, #ffe873 75%, #ffd700 100%, transparent 100%);
+  opacity: 0;
+  box-shadow: 
+    0 0 5px 2px #fde375,
+    0 0 15px 6px #fffac3,
+    0 0 1.5px 1px #fffbe8;
+  transform: scale(0.6);
+  /* Sparkle base animation */
+  animation: sparkle-appear 5s infinite;
+}
+
+/* Create randomization with nth-child and keyframes.
+   On different butterflies, sparkle animates from/to different places.
+   Since .butterfly is unique on page, randomization via steps in keyframes. */
+
+@keyframes sparkle-appear {
+  0%, 18%  { opacity: 0; transform: scale(0.6) translate(0,0);}
+  20%      { opacity: 1; transform: scale(1.15) translate(-7px, 1px);}    /* sparkle at one point */
+  28%      { opacity: 1; transform: scale(1.0) translate(-7px, 1px);}
+  33%, 41% { opacity: 0; transform: scale(0.6) translate(0,0);}
+  43%      { opacity: 1; transform: scale(1.12) translate(8px, -3px);}    /* sparkle at another */
+  51%      { opacity: 1; transform: scale(1.0) translate(8px, -3px);}
+  58%,67%  { opacity: 0; transform: scale(0.6) translate(0,0);}
+  70%      { opacity: 1; transform: scale(1.09) translate(3px, 16px);}   /* sparkle at a third place */
+  76%      { opacity: 1; transform: scale(0.8) translate(3px, 16px);}
+  81%,100% { opacity: 0; transform: scale(0.6) translate(0,0);}
+}
+
 .butterfly-image {
   width: 100%;
   height: 100%;
