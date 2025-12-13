@@ -12,10 +12,17 @@
   align-items: center;
 }
 
+.about-section .section-card {
+  background-image: url('../assets/about.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .about-text {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: #34495e;
+  color: #fff;
 }
 
 .about-text p {
