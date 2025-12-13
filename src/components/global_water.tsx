@@ -1,5 +1,4 @@
 import backgroundImage from '../assets/background.png';
-import butterflyGif from '../assets/butterfly.gif';
 import './global_water.css';
 
 function GlobalWater(): React.JSX.Element {
@@ -34,10 +33,6 @@ function GlobalWater(): React.JSX.Element {
           ></animate>
         </filter>
       </svg>
-      <div className="butterfly">
-        <div style={{ backgroundImage: `url(${butterflyGif})` }} className="butterfly-image" />
-      </div>
-
     </div>
   );
 }

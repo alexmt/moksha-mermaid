@@ -78,13 +78,6 @@ body {
   font-weight: 600;
 }
 
-/* About Section */
-/* About moved to about_section.css */
-
-/* Services moved to services_section.css */
-
-/* Book moved to book_section.css */
-
 /* Responsive */
 @media (max-width: 768px) {
   .section-content { padding: 80px 20px 40px; }
@@ -92,5 +85,3 @@ body {
   .section-card { flex-direction: column; gap: 20px; }
   .card-image img { width: 100%; max-width: 100%; border-radius: 12px; }
 }
-
-/* Butterfly moved to global_water.css */
