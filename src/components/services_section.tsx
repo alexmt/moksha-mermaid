@@ -1,15 +1,19 @@
-import React from 'react';
-import services1 from '../assets/services1.jpg';
-import services2 from '../assets/services2.jpg';
-import services3 from '../assets/services3.jpg';
+import React, { useRef } from 'react';
+// @ts-ignore - responsive-loader types
+import services1 from '../assets/services1.jpg?sizes[]=600&sizes[]=1200&sizes[]=1800';
+// @ts-ignore - responsive-loader types
+import services2 from '../assets/services2.jpg?sizes[]=600&sizes[]=1200&sizes[]=1800';
+// @ts-ignore - responsive-loader types
+import services3 from '../assets/services3.jpg?sizes[]=600&sizes[]=1200&sizes[]=1800';
 import { servicesContent } from '../content';
+import { useResponsiveBackground } from '../hooks/use_responsive_background';
 import Markdown from 'react-markdown'
 import './services_section.css';
 
 type ServiceCard = {
   title: string;
   subtitle: string;
-  image: string;
+  image: string | { src: string; srcSet: string; images: Array<{ path: string; width: number }> };
   description: string;
 };
 
@@ -21,6 +25,35 @@ const cards: ServiceCard[] = servicesContent.map((service, i) => ({
   description: service.description,
 }));
 
+function ServiceCard({ card, index }: { card: ServiceCard; index: number }) {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const backgroundImage = useResponsiveBackground(card.image, cardRef);
+  
+  return (
+    <div
+      ref={cardRef}
+      className="service-card"
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+      }}
+      role="article"
+      aria-label={card.title}
+      tabIndex={0}
+      data-index={index}
+    >
+      <div className="service-card-overlay">
+        <div className="service-card-text">
+          <h3 className="service-card-title">{card.title}</h3>
+          <p className="service-card-subtitle">{card.subtitle}</p>
+        </div>
+        <div className="service-card-description">
+          <Markdown>{card.description}</Markdown>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function ServicesSection(): React.JSX.Element {
   return (
     <section id="services" className="section services-section">
@@ -28,27 +61,7 @@ function ServicesSection(): React.JSX.Element {
         <h2 className="section-title">Services</h2>
         <div className="service-stack">
           {cards.map((c, i) => (
-            <div
-              key={c.title}
-              className="service-card"
-              style={{
-                backgroundImage: `url(${c.image})`,
-              }}
-              role="article"
-              aria-label={c.title}
-              tabIndex={0}
-              data-index={i}
-            >
-              <div className="service-card-overlay">
-                <div className="service-card-text">
-                  <h3 className="service-card-title">{c.title}</h3>
-                  <p className="service-card-subtitle">{c.subtitle}</p>
-                </div>
-                <div className="service-card-description">
-                  <Markdown>{c.description}</Markdown>
-                </div>
-              </div>
-            </div>
+            <ServiceCard key={c.title} card={c} index={i} />
           ))}
         </div>
       </div>

@@ -1,12 +1,19 @@
-import backgroundImage from '../assets/background.png';
+// @ts-ignore - responsive-loader types
+import backgroundImage from '../assets/background.png?sizes[]=800&sizes[]=1600&sizes[]=2400';
+import { useResponsiveBackground } from '../hooks/use_responsive_background';
+import { useRef } from 'react';
 import './global_water.css';
 
 function GlobalWater(): React.JSX.Element {
+  const backgroundRef = useRef<HTMLDivElement>(null);
+  const optimizedBackground = useResponsiveBackground(backgroundImage, backgroundRef);
+  
   return (
     <div
+      ref={backgroundRef}
       className="background"
       style={{
-        backgroundImage: `url(${backgroundImage})`,
+        backgroundImage: `url(${optimizedBackground})`,
         position: 'fixed',
         top: 0,
         left: 0,
