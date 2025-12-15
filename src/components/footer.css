@@ -19,21 +19,24 @@
   align-items: center;
   justify-content: center;
   gap: 15px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  white-space: nowrap;
 }
 
 .footer-label {
   color: white;
   font-weight: 500;
+  white-space: nowrap;
 }
 
 .footer-contact {
   display: flex;
   align-items: center;
   gap: 15px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   color: white;
   font-size: 14px;
+  white-space: nowrap;
 }
 
 .footer-link {
@@ -41,6 +44,7 @@
   text-decoration: none;
   font-size: 14px;
   transition: opacity 0.3s ease;
+  white-space: nowrap;
 }
 
 .footer-link:hover {
@@ -56,21 +60,37 @@
 @media (max-width: 768px) {
   .footer {
     padding: 12px 15px;
+    font-size: 12px;
   }
   
   .footer-content {
-    flex-direction: column;
-    gap: 8px;
-    text-align: center;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .footer-content::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .footer-content {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
     
   .footer-contact {
-    gap: 10px;
+    gap: 8px;
   }
-}
+  
+  .footer-link,
+  .footer-label,
+  .footer-contact {
+    font-size: 12px;
+  }
 
-@media (max-width: 768px) {
-  .footer a, .footer span {
-    font-size: 8px;
+  .footer-label {
+    display: none;
   }
 }
