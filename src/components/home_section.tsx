@@ -33,8 +33,8 @@ function HomeSection(): React.JSX.Element {
         <div className="home-hero">
           <div className="home-hero-subtitle">In-Person and Telehealth for California</div>
           <h1 className="home-hero-title">
-            <p>You are the wave and the ocean.</p>
-            <p>Where stillness meets the tide of becoming.</p>
+            <p>You are the wave and the ocean</p>
+            <p>Where stillness meets the tide of becoming</p>
           </h1>
           <button
             className="home-hero-cta"

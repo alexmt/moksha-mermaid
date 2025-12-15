@@ -46,6 +46,7 @@
   max-width: 900px;
   padding: 0 20px;
   z-index: 9;
+  width: 900px;
 }
 
 .home-hero-subtitle {
@@ -61,10 +62,6 @@
   color: #ffffff;
   text-shadow: 0 2px 12px rgba(0,0,0,0.25);
   margin-bottom: 18px;
-}
-
-.home-hero-title p {
-  white-space: nowrap;
 }
 
 .home-hero-cta {
@@ -83,6 +80,9 @@
 }
 
 @media (max-width: 768px) {
+  .home-hero {
+    width: 100%;
+  }
   .home-header {
     top: 16px;
     left: 16px;

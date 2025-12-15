@@ -9,6 +9,7 @@
   backdrop-filter: blur(10px);
   padding: 15px 20px;
   box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.2);
+  font-size: 14px;
 }
 
 .footer-content {
@@ -23,7 +24,6 @@
 
 .footer-label {
   color: white;
-  font-size: 14px;
   font-weight: 500;
 }
 
@@ -63,16 +63,14 @@
     gap: 8px;
     text-align: center;
   }
-  
-  .footer-label {
-    font-size: 12px;
-  }
-  
-  .footer-link {
-    font-size: 12px;
-  }
-  
+    
   .footer-contact {
     gap: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer a, .footer span {
+    font-size: 8px;
   }
 }
