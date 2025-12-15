@@ -60,7 +60,7 @@ function BookSection(): React.JSX.Element {
               <label htmlFor="message">Message</label>
               <textarea id="message" name="message" rows={5}></textarea>
             </div>
-            <button type="submit" className="submit-button" disabled={sending}>Submit Request</button>
+            <button type="submit" className="submit-button" disabled={sending}>Request a free 20-minute consultation</button>
             {sending && <div className="sending-message">Sending...</div>}
           </form>
         </div>
