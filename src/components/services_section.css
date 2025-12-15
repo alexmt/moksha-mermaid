@@ -114,7 +114,7 @@
   outline-offset: 4px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1600px) {
   .services-section .section-content {
     max-width: none;
     width: 100%;
