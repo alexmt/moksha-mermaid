@@ -31,8 +31,11 @@ function HomeSection(): React.JSX.Element {
     <>
       <section id="home" className={"section home-section" + (showExtra ? ' extra-visible' : '')}>
         <div className="home-hero">
-          <div className="home-hero-subtitle">Telehealth for San Francisco Bay Area</div>
-          <h1 className="home-hero-title">Move Freely Again Through Playful, Restorative Motion</h1>
+          <div className="home-hero-subtitle">In-Person and Telehealth for California</div>
+          <h1 className="home-hero-title">
+            <p>You are the wave and the ocean.</p>
+            <p>Where stillness meets the tide of becoming.</p>
+          </h1>
           <button
             className="home-hero-cta"
             onClick={() => {
