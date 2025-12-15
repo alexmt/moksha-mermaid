@@ -58,7 +58,7 @@ function ServicesSection(): React.JSX.Element {
   return (
     <section id="services" className="section services-section">
       <div className="section-content">
-        <h2 className="section-title">Services</h2>
+        {/* <h2 className="section-title">How I Work</h2> */}
         <div className="service-stack">
           {cards.map((c, i) => (
             <ServiceCard key={c.title} card={c} index={i} />
