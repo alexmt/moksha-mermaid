@@ -43,3 +43,31 @@
   85% { transform: translateY(-5px) translateX(-2px) rotate(2deg); }
   100% { transform: translateY(0) translateX(0) rotate(-2deg); }
 }
+
+/* Ripple effect around cursor */
+.ripple {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  animation: ripple-expand 1s ease-out forwards;
+  z-index: 1;
+}
+
+@keyframes ripple-expand {
+  0% {
+    width: 20px;
+    height: 20px;
+    opacity: 0.8;
+    border-width: 2px;
+  }
+  100% {
+    width: 200px;
+    height: 200px;
+    opacity: 0;
+    border-width: 1px;
+  }
+}

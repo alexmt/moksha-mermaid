@@ -1,12 +1,51 @@
 // @ts-ignore - responsive-loader types
 import backgroundImage from '../assets/background.png?sizes[]=800&sizes[]=1600&sizes[]=2400';
 import { useResponsiveBackground } from '../hooks/use_responsive_background';
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import './global_water.css';
+
+interface Ripple {
+  id: number;
+  x: number;
+  y: number;
+}
 
 function GlobalWater(): React.JSX.Element {
   const backgroundRef = useRef<HTMLDivElement>(null);
   const optimizedBackground = useResponsiveBackground(backgroundImage, backgroundRef);
+  const [ripples, setRipples] = useState<Ripple[]>([]);
+  const rippleIdRef = useRef(0);
+  const lastRippleTimeRef = useRef(0);
+  
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      const now = Date.now();
+      // Throttle ripples to avoid too many at once
+      if (now - lastRippleTimeRef.current < 100) {
+        return;
+      }
+      lastRippleTimeRef.current = now;
+      
+      const newRipple: Ripple = {
+        id: rippleIdRef.current++,
+        x: e.clientX,
+        y: e.clientY,
+      };
+      
+      setRipples((prev) => [...prev, newRipple]);
+      
+      // Remove ripple after animation completes
+      setTimeout(() => {
+        setRipples((prev) => prev.filter((r) => r.id !== newRipple.id));
+      }, 1000);
+    };
+    
+    window.addEventListener('mousemove', handleMouseMove);
+    
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
   
   return (
     <div
@@ -26,6 +65,16 @@ function GlobalWater(): React.JSX.Element {
       }}
     >
       <div className="water"></div>
+      {ripples.map((ripple) => (
+        <div
+          key={ripple.id}
+          className="ripple"
+          style={{
+            left: `${ripple.x}px`,
+            top: `${ripple.y}px`,
+          }}
+        />
+      ))}
       <svg className="water-filter">
         <filter id="turbulence" x="0" y="0" width="100%" height="100%">
           <feTurbulence id="sea-filter" numOctaves="3" seed="2" baseFrequency="0.02 0.05"></feTurbulence>
