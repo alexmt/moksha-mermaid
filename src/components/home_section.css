@@ -63,6 +63,10 @@
   margin-bottom: 18px;
 }
 
+.home-hero-title p {
+  white-space: nowrap;
+}
+
 .home-hero-cta {
   background: rgba(255, 255, 255, 0.85);
   color: #2c3e50;
