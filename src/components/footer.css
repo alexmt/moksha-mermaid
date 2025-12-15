@@ -32,6 +32,8 @@
   align-items: center;
   gap: 15px;
   flex-wrap: wrap;
+  color: white;
+  font-size: 14px;
 }
 
 .footer-link {
