@@ -17,7 +17,7 @@ function BookSection(): React.JSX.Element {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data)
       });
-      alert('Thank you for your request! We will get back to you soon.');
+      alert('Thank you for your request! I will get back to you soon.');
     } catch (error) {
       console.error(error);
       alert('Sorry, there was an error sending your request. Please try again later.');
@@ -28,7 +28,7 @@ function BookSection(): React.JSX.Element {
   return (
     <section id="book" className="section book-section">
       <div className="section-content" style={{ textAlign: 'center' }}>
-        <h2 className="section-title">Book a Session</h2>
+        <h2 className="section-title">Contact Me</h2>
         <div className="book-content">
           <form className="booking-form" onSubmit={handleSubmit}>
             <div className="form-group">

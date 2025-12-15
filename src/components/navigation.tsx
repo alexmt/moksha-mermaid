@@ -81,7 +81,7 @@ function Navigation(): React.JSX.Element {
               className={activeSection === "book" ? "active" : ""}
               onClick={() => scrollToSection("book")}
             >
-              Book a Session
+              Contact Me
             </button>
           </li>
         </ul>
