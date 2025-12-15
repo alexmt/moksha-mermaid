@@ -55,6 +55,7 @@
   display: flex;
   align-items: flex-start;
   height: 100%;
+  gap: 24px;
 }
 
 .service-card-description {
@@ -65,6 +66,7 @@
   background: rgba(0,0,0,0.2);
   backdrop-filter: blur(5px);
   border-radius: 12px;
+  flex: 1;
 }
 
 .service-card-description p {
@@ -79,7 +81,9 @@
   color: #fff;
   padding: 20px 24px;
   margin: 24px;
-  max-width: 900px;
+  width: 25%;
+  min-width: 25%;
+  flex-shrink: 0;
   text-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
@@ -122,7 +126,14 @@
     padding-left: 8px;
     padding-right: 8px;
   }
-  .service-card-overlay { display: block; }
+  .service-card-overlay { 
+    display: block; 
+    gap: 0;
+  }
+  .service-card-text {
+    width: 100%;
+    min-width: 100%;
+  }
   .service-card { min-height: 380px; border-radius: 18px; }
   .service-card:not(:first-child) { margin-top: -20px; }
 }
