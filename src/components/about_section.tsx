@@ -2,6 +2,7 @@
 import vanessaImage from '../assets/vanessa_aders.png?sizes[]=400&sizes[]=800&sizes[]=1200';
 import ResponsiveImage from './responsive_image';
 import { aboutContent } from '../content';
+import ScrollDownButton from './scroll_down_button';
 import './about_section.css';
 
 function AboutSection(): React.JSX.Element {
@@ -26,6 +27,7 @@ function AboutSection(): React.JSX.Element {
           </div>
         </div>
       </div>
+      <ScrollDownButton nextSection="services" />
     </section>
   );
 }

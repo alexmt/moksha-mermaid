@@ -23,14 +23,13 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 48px;
-  max-width: 1000px;
-  margin: 0 auto;
+  width: 100%;
 }
 
 .service-card {
   margin-bottom: 5em;
-  min-height: 520px;
-  border-radius: 24px;
+  min-height: 600px;
+  border-radius: 28px;
   overflow: hidden;
   background: rgba(64, 130, 150, 0.25);
   backdrop-filter: blur(10px);
@@ -45,11 +44,6 @@
   padding-right: 40px;
 }
 
-/* Stack padding around the cards */
-.services-section .service-stack {
-  padding-left: 12px;
-  padding-right: 12px;
-}
 
 .service-card-overlay {
   display: flex;
@@ -61,12 +55,14 @@
 .service-card-description {
   align-items: flex-end;
   color: #fff;
-  padding: 20px 24px;
-  margin: 24px;
+  padding: 28px 32px;
+  margin: 28px;
   background: rgba(0,0,0,0.2);
   backdrop-filter: blur(5px);
-  border-radius: 12px;
+  border-radius: 16px;
   flex: 1;
+  font-size: 1.1rem;
+  line-height: 1.85;
 }
 
 .service-card-description p {
@@ -79,24 +75,25 @@
 
 .service-card-text {
   color: #fff;
-  padding: 20px 24px;
-  margin: 24px;
-  width: 25%;
-  min-width: 25%;
+  padding: 28px 32px;
+  margin: 28px;
+  width: 28%;
+  min-width: 28%;
   flex-shrink: 0;
   text-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
 .service-card-title {
   font-family: 'Lora', serif;
-  font-size: 2.2rem;
-  line-height: 1.2;
-  margin-bottom: 6px;
+  font-size: 3.2rem;
+  line-height: 1.15;
+  margin-bottom: 10px;
   text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+  font-weight: 700;
 }
 
 .service-card-subtitle {
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   opacity: 0.9;
 }
 
@@ -114,6 +111,62 @@
   outline-offset: 4px;
 }
 
+.service-card-wrapper {
+  position: relative;
+}
+
+.service-card-wrapper .scroll-down-btn {
+  bottom: -26px;
+  left: 32px;
+  z-index: 20;
+}
+
+.service-card {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .services-section .section-content {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 70px;
+  }
+  .service-stack {
+    gap: 56px;
+  }
+  .service-card {
+    min-height: auto;
+    border-radius: 16px;
+    margin-top: 0 !important;
+  }
+  .service-card-overlay {
+    display: block;
+  }
+  .service-card-text {
+    width: 100%;
+    min-width: 100%;
+    padding: 20px 20px 10px;
+    margin: 0;
+  }
+  .service-card-title {
+    font-size: 2rem;
+  }
+  .service-card-subtitle {
+    font-size: 1rem;
+  }
+  .service-card-description {
+    padding: 16px 20px;
+    margin: 0 12px 16px;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+  .service-card-wrapper .scroll-down-btn {
+    left: 16px;
+    bottom: -22px;
+  }
+}
+
 @media (max-width: 1600px) {
   .services-section .section-content {
     max-width: none;
@@ -123,8 +176,6 @@
   }
   .service-stack {
     gap: 24px;
-    padding-left: 8px;
-    padding-right: 8px;
   }
   .service-card-overlay { 
     display: block; 

@@ -5,6 +5,24 @@
   align-items: center;
 }
 
+.about-section .section-content {
+  padding-top: 70px;
+  padding-bottom: 30px;
+}
+
+.about-section .section-card {
+  padding: 30px 40px;
+  gap: 40px;
+}
+
+.about-section .card-image img {
+  width: auto;
+  max-width: 45vw;
+  max-height: calc(100vh - 160px);
+  height: auto;
+  object-fit: contain;
+}
+
 .about-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -20,8 +38,8 @@
 }
 
 .about-text {
-  font-size: 1.1rem;
-  line-height: 1.8;
+  font-size: 1.25rem;
+  line-height: 1.9;
   color: #fff;
 }
 
@@ -44,5 +62,24 @@
   .about-content {
     grid-template-columns: 1fr;
     gap: 40px;
+  }
+  .about-section .section-content {
+    padding-top: 70px;
+    padding-bottom: 20px;
+  }
+  .about-section .section-card {
+    padding: 16px;
+    gap: 16px;
+  }
+  .about-section .card-image img {
+    width: 100%;
+    max-width: 100%;
+    max-height: 55vh;
+    object-fit: cover;
+    object-position: center top;
+  }
+  .about-text {
+    font-size: 1rem;
+    line-height: 1.7;
   }
 }
