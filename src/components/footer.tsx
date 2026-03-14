@@ -17,6 +17,8 @@ function Footer(): React.JSX.Element {
             415 895 0222
           </a>
         </div>
+        <div className="footer-label">AMFT:</div>
+        <div className="footer-contact"><span>#161923</span></div>
       </div>
     </footer>
   );
