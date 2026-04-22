@@ -39,6 +39,39 @@
 })();
 
 /* ============================================================
+   HAMBURGER MENU
+   ============================================================ */
+(function () {
+  var toggle    = document.getElementById('nav-toggle');
+  var mobileNav = document.getElementById('mobile-nav');
+  if (!toggle || !mobileNav) return;
+
+  function openMenu() {
+    toggle.classList.add('open');
+    toggle.setAttribute('aria-expanded', 'true');
+    mobileNav.classList.add('open');
+    mobileNav.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    toggle.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    mobileNav.classList.remove('open');
+    mobileNav.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  toggle.addEventListener('click', function () {
+    toggle.classList.contains('open') ? closeMenu() : openMenu();
+  });
+
+  mobileNav.querySelectorAll('.mobile-nav-link').forEach(function (link) {
+    link.addEventListener('click', closeMenu);
+  });
+})();
+
+/* ============================================================
    SMOOTH SCROLL for all anchor links
    ============================================================ */
 document.querySelectorAll('a[href^="#"]').forEach(function (a) {
