@@ -1,32 +1,12 @@
 {
-	"scripts": {
-		"start": "webpack serve --mode development",
-		"build": "webpack --mode production"
-	},
-	"dependencies": {
-		"react": "^19.2.0",
-		"react-dom": "^19.2.0",
-		"react-markdown": "^10.1.0",
-		"yaml": "^2.8.2"
-	},
-	"devDependencies": {
-		"@types/react": "^19.2.7",
-		"@types/react-dom": "^19.2.3",
-		"css-loader": "^7.1.2",
-		"html-webpack-plugin": "^5.6.5",
-		"imagemin": "^9.0.1",
-		"imagemin-mozjpeg": "^10.0.0",
-		"imagemin-pngquant": "^10.0.0",
-		"imagemin-webp": "^8.0.0",
-		"imagemin-webpack-plugin": "^2.4.2",
-		"raw-loader": "^4.0.2",
-		"responsive-loader": "^3.1.2",
-		"sharp": "^0.34.5",
-		"style-loader": "^4.0.0",
-		"ts-loader": "^9.5.4",
-		"typescript": "^5.9.3",
-		"webpack": "^5.103.0",
-		"webpack-cli": "^6.0.1",
-		"webpack-dev-server": "^5.2.2"
-	}
+  "scripts": {
+    "start": "serve -l 1234 .",
+    "build": "node build.js"
+  },
+  "devDependencies": {
+    "clean-css": "^5.3.3",
+    "html-minifier-terser": "^7.2.0",
+    "serve": "^14.2.4",
+    "terser": "^5.39.0"
+  }
 }
