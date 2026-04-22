@@ -14,7 +14,7 @@ async function build() {
   fs.mkdirSync('dist', { recursive: true });
 
   // Copy assets (images, fonts, etc.)
-  copyDir('src/assets', 'dist/src/assets');
+  copyDir('assets', 'dist/assets');
 
   // Minify CSS
   const css    = fs.readFileSync('site.css', 'utf8');

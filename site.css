@@ -36,7 +36,7 @@ button { font-family: var(--sans); }
   position: fixed;
   inset: 0;
   z-index: 0;
-  background: url('src/assets/background.png') center / cover no-repeat;
+  background: url('assets/background.png') center / cover no-repeat;
   pointer-events: none;
 }
 
