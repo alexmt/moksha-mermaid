@@ -1,7 +1,8 @@
 {
   "scripts": {
     "start": "serve -l 1234 .",
-    "build": "node build.js"
+    "build": "node build.js",
+    "generate-llms-txt": "node generate-llms-txt.js"
   },
   "devDependencies": {
     "clean-css": "^5.3.3",

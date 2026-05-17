@@ -3,6 +3,7 @@
 
 const fs   = require('fs');
 const path = require('path');
+const { run: generateLlmsTxt } = require('./generate-llms-txt');
 
 async function build() {
   const { minify: minifyHtml }  = await import('html-minifier-terser');
@@ -42,6 +43,9 @@ async function build() {
   });
   fs.writeFileSync('dist/index.html', minHtml);
   console.log(`index.html ${kb(html)} → ${kb(minHtml)}`);
+
+  // Generate llms.txt directly into dist
+  generateLlmsTxt('dist/llms.txt');
 
   console.log('\nBuild complete → dist/');
 }
