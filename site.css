@@ -280,6 +280,7 @@ section, [id] { scroll-margin-top: var(--header-h); }
   margin-bottom: 36px;
 }
 .hero-eyebrow .dot { margin: 0 14px; opacity: 0.4; }
+.hero-eyebrow .eyebrow-item { white-space: nowrap; }
 
 .hero-title {
   font-family: var(--serif);
@@ -903,12 +904,14 @@ section, [id] { scroll-margin-top: var(--header-h); }
   .section-heading { font-size: 30px; }
   .hero-title      { font-size: 56px; letter-spacing: -1px; }
   .hero-actions    { flex-direction: column; gap: 14px; }
+  .hero-eyebrow    { line-height: 1.9; }
+  .hero-eyebrow .dot          { display: none; }
+  .hero-eyebrow .eyebrow-item { display: block; }
 }
 
 @media (max-width: 640px) {
   .nav-link         { padding: 6px 10px; font-size: 11px; }
   .hero-eyebrow     { font-size: 9px; letter-spacing: 0.14em; }
-  .hero-eyebrow .dot{ margin: 0 8px; }
   .hero-title       { font-size: 44px; }
 
   .expect-list      { grid-template-columns: 1fr; }
