@@ -467,6 +467,7 @@ section, [id] { scroll-margin-top: var(--header-h); }
   margin-top: 1px;
   letter-spacing: 0.1em;
   font-weight: 500;
+  line-height: 1.6;
 }
 
 /* ============================================================
